@@ -1,10 +1,10 @@
 <%= render "shared/nav"%>
-<body class="text-center">
+<body class="text-center my-5 ">
 <div class="content">
 <%= form_with model: @user, url: user_registration_path, class:'registration-main', local: true do |f| %>
 <div class='form-wrap'>
   <div class='form-header'>
-    <h1 class='form-header-text'>
+    <h1>
       会員情報入力
     </h1>
   </div>
@@ -13,16 +13,16 @@
   <div class="form-group">
     <div class='form-text-wrap'>
       <label class="form-text">ニックネーム</label>
-      <span class="indispensable">必須</span>
+      <span class="indispensable">※入力必須です</span>
     </div>
-    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"例) furima太郎", maxlength:"40" %>
+    <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"(例)にこにこ太郎", maxlength:"20" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
-      <label class="form-text">カンパニーネーム</label>
+      <label class="form-text">会社名</label>
       <span class="indispensable">必須</span>
     </div>
-    <%= f.text_area :company_name, class:"input-default", id:"company_name", placeholder:"例) strat株式会社", maxlength:"40" %>
+    <%= f.text_area :company_name, class:"input-default", id:"company_name", placeholder:"(例)スマイル株式会社", maxlength:"20" %>
   </div>
   <div class="form-group">
     <div class='form-text-wrap'>
@@ -47,15 +47,6 @@
     <%= f.password_field :password_confirmation, class:"input-default", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい" %>
   </div>
 
-    <p class='info-text'>※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。</p>
-  </div>
-  <div class="form-group">
-    <h2 class='form-bottom-text'>
-      「会員登録」のボタンを押すことにより、
-      <span>利用規約</span>
-      <br>に同意したものとみなします
-    </h2>
-  </div>
   <div class='register-btn'>
     <%= f.submit "会員登録" ,class:"register-red-btn" %>
   </div>

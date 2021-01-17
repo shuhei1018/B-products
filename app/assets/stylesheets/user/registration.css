@@ -1,4 +1,10 @@
 body {
   height: 100%;
-  padding-top: 100px;
+  padding-top: 200px;
+}
+
+.nav-font {
+  font-size: 20px;
+  color: black;
+  list-style: none;
 }
