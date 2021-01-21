@@ -21,7 +21,7 @@
       </li>
       <li class="item"><%= link_to new_user_session_path, class: "login", method: :get do %><i class="fas fa-sign-in-alt fa-4x"></i><p class="nav-word">ログイン</p><%end%>
       </li>
-      <li class="item"><%= link_to products_guest_sign_in_path, class: "login", method: :post do %><i class="fas fa-sign-in-alt fa-4x"></i><p class="nav-word">ゲストログイン</p><%end%>
+      <li class="item"><%= link_to users_guest_sign_in_path, class: "login", method: :post do %><i class="fas fa-sign-in-alt fa-4x"></i><p class="nav-word">ゲストログイン</p><%end%>
       </li>
     <% end %>
 
