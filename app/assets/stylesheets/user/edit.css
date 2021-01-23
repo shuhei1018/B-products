@@ -1,0 +1,18 @@
+.delete-btn {
+  width: 50%;
+  margin: 15px auto;
+}
+
+.delete-red-btn {
+  width: 100%;
+  background: red;
+  border: 1px solid red;
+  color: #fff;
+  line-height: 48px;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.user-delete {
+  border-bottom: solid 2px black;
+}
