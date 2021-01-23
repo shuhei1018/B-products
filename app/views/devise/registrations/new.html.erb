@@ -1,4 +1,6 @@
 <%= render "shared/nav"%>
+<%= render 'shared/flash_messages' %>
+
 <body>
 
   <h1>ようこそ！</h1>
@@ -6,7 +8,7 @@
     
   <div>
     <%= form_with model: @user, url: user_registration_path, class:'registration-main', local: true do |f| %>
-
+      <%= render partial: 'shared/error_messages', locals: {model: f.object} %>
       <div class="form-group">
         <div>
           <label class="form-text">ニックネーム</label>
