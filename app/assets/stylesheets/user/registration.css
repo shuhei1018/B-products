@@ -1,5 +1,5 @@
 body {
-  margin-top: 150px;
+  margin-top: 120px;
 }
 
 h1,
@@ -65,4 +65,30 @@ h2 {
 
 .reference {
   font-size: 14px;
+}
+
+@media screen and (max-width: 480px) {
+  .form-text {
+    font-size: 18px;
+  }
+  .form-group {
+    width: 75%;
+    margin: 0 auto;
+    padding-top: 10px;
+  }
+  h1,
+  h2 {
+    font-size: 1.6em;
+  }
+  .input-default {
+    width: 100%;
+    margin-top: 5px;
+    height: 28px;
+    padding: 8px 16px 8px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    background: #fff;
+    font-size: 16px;
+    resize: none;
+  }
 }
