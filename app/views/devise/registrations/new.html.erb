@@ -10,7 +10,7 @@
       <%= render partial: 'shared/error_messages', locals: {model: f.object} %>
       <div class="form-group">
         <div>
-          <label class="form-text">ニックネーム</label>
+          <label class="form-text">ニックネーム (2文字以上)</label>
         </div>
         <%= f.text_area :nickname, class:"input-default", id:"nickname", placeholder:"必須", maxlength:"20" %>
       </div>
