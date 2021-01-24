@@ -1,0 +1,12 @@
+.alert {
+  font-size: 18px;
+  height: 30px;
+  position: fixed;
+  top: 110px;
+  width: 100%;
+  text-align: center;
+  background-color: dodgerblue;
+  color: aliceblue;
+  padding: 5px;
+  margin-bottom: 10px;
+}
