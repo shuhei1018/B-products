@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   end
 
   def new
-    
+    @product = Product.new
   end
 
   def move_to_index
