@@ -1,4 +1,4 @@
-class Status < ApplicationRecord
+class Status < ActiveHash::Base
   self.data = [
     { id: 1, name: '--' },
     { id: 2, name: '正規品レベル(少量ゆえに販売できていない製品)' },

@@ -7,16 +7,30 @@
       投稿製品画像
     </div>
     <div class="click-upload">
-      <%= f.file_field :image, id:"item-image" %>
+      <%= f.file_field :image %>
     </div>
   </div>
   <div class="weight-bold-text">
   製品名
   </div>
-  <%= f.text_area :name, class:"products-text", id:"product-name", placeholder:"製品名", maxlength:"20" %>
+  <%= f.text_area :name, class:"products-text", placeholder:"製品名", maxlength:"20" %>
   <div class="weight-bold-text">
   製品状態
   </div>
-  <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
-
+  <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+  <div class="weight-bold-text">
+    製品説明
+  </div>
+  <%= f.text_area :explanation, class:"products-text", placeholder:"製品の使用用途等記載してください。" ,rows:"5" ,maxlength:"1000" %>
+  <div class="weight-bold-text">
+  希望販売価格
+  </div>
+  <div class="product-cost">
+  <span class="cost-word">¥</span>
+  <%= f.text_field :price, class:"price-input", placeholder:"希望販売価格(任意です)" %>
+  <span class="cost-word">円</span>
+  </div>
+  <div class="post-btn-contents">
+  <%= f.submit "投稿する" ,class:"post-btn" %>
+  </div>
 <%end%>
