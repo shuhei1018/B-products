@@ -10,4 +10,13 @@
       <%= f.file_field :image, id:"item-image" %>
     </div>
   </div>
+  <div class="weight-bold-text">
+  製品名
+  </div>
+  <%= f.text_area :name, class:"products-text", id:"product-name", placeholder:"製品名", maxlength:"20" %>
+  <div class="weight-bold-text">
+  製品状態
+  </div>
+  <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box", id:"item-sales-status"}) %>
+
 <%end%>
