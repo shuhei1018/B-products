@@ -1,1 +1,13 @@
 <%= render "shared/nav"%>
+<h2>製品を投稿しよう！</h2>
+<%= form_with model:@product, class: "product-post-main", local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      投稿製品画像
+    </div>
+    <div class="click-upload">
+      <%= f.file_field :image, id:"item-image" %>
+    </div>
+  </div>
+<%end%>
