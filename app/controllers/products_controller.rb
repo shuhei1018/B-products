@@ -7,10 +7,19 @@ class ProductsController < ApplicationController
     @product = Product.new
   end
 
+  def create
+    @product = Product.new(product_params)
+    if @product.save
+      redirect_to root_path
+    else
+      render :new
+    end
+  end
+
   private
 
   def product_params
-    params.require(:product).permit(:image).merge(user_id: current_user.id)
+    params.require(:product).permit(:image, :name, :status_id, :explanation, :price).merge(user_id: current_user.id)
   end
 
   def move_to_index
