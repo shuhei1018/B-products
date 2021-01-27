@@ -4,3 +4,9 @@ ja:
       user:
         nickname: ニックネーム
         email: メールアドレス
+      product:
+        name: 製品名
+        image: 投稿製品画像
+        explanation: 製品説明
+        price: 希望販売価格
+        status_id: 製品状態

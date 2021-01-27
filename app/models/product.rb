@@ -3,5 +3,6 @@ class Product < ApplicationRecord
   belongs_to :status
   belongs_to :user
   has_one_attached :image
-  validates :status_id, numericality: { other_than: 1 }
+  validates :image, :name, :explanation, presence: true
+  validates :status_id, numericality: { other_than: 0 }
 end
