@@ -2,12 +2,24 @@
 <%= render "shared/nav"%>
 <%= render 'shared/flash_messages' %>
 
-<div>
-  <% @products.each do |product| %>
-    <%= image_tag product.image.variant(resize: '300x200') , class: "" if product.image.attached? %>
-  <% end %>
+<div class="product-contents">
+  <ul class= "product-lists">
+    <% @products.each do |product| %>
+      <li class="list">
+        <div class="product-img-content">
+          <h3 class="product-name">
+            <%= product.name %>
+          </h3>
+          <%= image_tag product.image , class: "product-img" if product.image.attached? %>
+        </div>
+        <div class="product-info">
+          <%= product.user.nickname %>
+          <%= product.created_at.strftime("%m/%d") %>
+        </div>
+      </li>
+    <% end %>
+  </ul>
 </div>
-
 
 <%= render "shared/footer"%>
 
