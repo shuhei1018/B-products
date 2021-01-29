@@ -13,9 +13,10 @@
 }
 
 .list {
-  width: 30vh;
-  padding: 1vw;
-  margin: 10px 30px;
+  width: 31vh;
+  padding: 0.5vw;
+  margin: 10px 33px;
+  background-color: aliceblue;
 }
 
 .product-img-content {
@@ -23,8 +24,8 @@
 }
 
 .product-img {
-  width: 30vh;
-  height: 30vh;
+  width: 31vh;
+  height: 31vh;
 }
 
 .product-name {
@@ -38,4 +39,15 @@
 }
 
 .product-info {
+  display: flex;
+  justify-content: space-around;
+}
+
+.product-user-info {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.product-created-at {
+  font-size: 12px;
 }

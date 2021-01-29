@@ -13,8 +13,15 @@
           <%= image_tag product.image , class: "product-img" if product.image.attached? %>
         </div>
         <div class="product-info">
-          <%= product.user.nickname %>
-          <%= product.created_at.strftime("%m/%d") %>
+          <div class="product-user-info">
+            <%= product.user.company_name %>
+            <br>
+            <%= product.user.nickname %>
+          </div>
+          <div class="product-created-at">
+            <p>投稿日</p>
+            <%= product.created_at.strftime("%m/%d") %>
+          </div>
         </div>
       </li>
     <% end %>
