@@ -1,7 +1,15 @@
 
 <%= render "shared/nav"%>
 <%= render 'shared/flash_messages' %>
-
+<div class="title-contents">
+  <%= image_tag "factory_pic.png" %>
+  <h1 class="title-name">Welcome to B-products</h1>
+  <h2 class="title-subname">メーカー製品を共有しよう！</h2>
+</div>
+<h4 class="title-explanation">当サイトはメーカー製品(新品)の投稿・閲覧が可能です。
+<br>※中古品ではありません。品位が規格外であったり、少量故に廃棄せざるを得ない製品です。
+<br>※性能が規格外のものはありません。
+</h4>
 <div class="product-contents">
   <ul class= "product-lists">
     <% @products.each do |product| %>
