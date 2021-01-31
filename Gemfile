@@ -67,3 +67,7 @@ gem 'active_hash'
 gem 'devise'
 gem 'rails-i18n', '~> 6.0'
 gem 'devise-i18n'
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem "refile", require: "refile/rails", github: 'manfe/refile'
+gem "refile-mini_magick"

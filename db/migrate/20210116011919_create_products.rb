@@ -6,8 +6,7 @@ class CreateProducts < ActiveRecord::Migration[6.0]
       t.integer :status_id, null: false
       t.text :explanation, null: false
       t.integer :price 
-      # t.references :user, null: false, foreign_key: true
-      # アソシエーション後に記述し直す
+      t.references :user, null: false, foreign_key: true
       t.timestamps
     end
   end

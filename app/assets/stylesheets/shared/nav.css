@@ -12,11 +12,10 @@
 
 .nav-header {
   margin: 5px auto 5px 20px;
-  width: 150px;
 }
 
 .title {
-  line-height: 40px;
+  line-height: 30px;
   text-align: center;
   font-weight: bold;
   color: black;
@@ -26,7 +25,8 @@
 .item {
   width: 150px;
   height: 70px;
-  margin: 5px;
+  margin: 3px;
+  margin-right: 10px;
   line-height: 40px;
   text-align: center;
   font-weight: bold;
@@ -37,15 +37,28 @@ li {
   float: left;
 }
 
+.product {
+  background-color: rgb(210, 150, 30);
+  border-radius: 25%;
+  margin-right: 10px;
+  padding-left: 5px;
+}
+
 .fa-industry {
   color: pink;
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 620px) {
   .item {
-    font-size: 50%;
+    font-size: 80%;
+    width: auto;
   }
   .title-word {
-    font-size: 50%;
+    font-size: 80%;
+    width: auto;
+  }
+  .nav-word {
+    font-size: 80%;
+    width: auto;
   }
 }
