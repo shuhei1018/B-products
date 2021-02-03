@@ -1,5 +1,7 @@
 class ProductsController < ApplicationController
-  before_action :move_to_index, except: [:index, :show]
+  before_action :ser_production, only: [:show, :destroy, :edit, :update]
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :move_to_index, only: [:destroy, :edit]
   def index
     @products = Product.includes(:user).order(created_at: :desc)
   end
@@ -18,11 +20,9 @@ class ProductsController < ApplicationController
   end
 
   def show
-    @product = Product.find(params[:id])
   end
 
   def destroy
-    @product = Product.find(params[:id])
     if @product.destroy
       redirect_to root_path
     else
@@ -31,11 +31,9 @@ class ProductsController < ApplicationController
   end
 
   def edit
-    @product = Product.find(params[:id])
   end
 
   def update
-    @product = Product.find(params[:id])
     if @product.update(product_params)
       redirect_to product_path(@product.id)
     else
@@ -49,7 +47,11 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:image, :name, :status_id, :explanation, :price).merge(user_id: current_user.id)
   end
 
+  def ser_production
+    @product = Product.find(params[:id])
+  end
+
   def move_to_index
-    redirect_to action: :index unless user_signed_in?
+    redirect_to action: :index unless current_user.id == @product.user_id
   end
 end
