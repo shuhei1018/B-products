@@ -1,1 +1,35 @@
-<h1>Hello!!</h1>
+<%= render "shared/nav"%>
+
+<div class="product-post-main">
+  <h1><%= @product.name %></h1>
+  <%= image_tag @product.image, class:"show-img"%>
+  <ul class="show-info">
+    <div class="show-product-user-info">
+    <%= @product.user.company_name %><br>
+    <%= @product.user.nickname %>
+    </div>
+    <li class="show-product-created-at"><%= @product.created_at.strftime("%Y-%m/%d %H:%M") %></li>
+  </ul>
+  <div class="show-product-content">
+    <div class="show-product-item">製品状態</div>
+    <div class="show-product-info">
+    <%= @product.status.name %>
+    </div>
+    <h4 class="show-product-item">製品説明</h4>
+    <div class="show-product-info">
+    <%= @product.explanation %>
+    </div>
+    <% if @product.price.present? %>
+      <h4 class="show-product-item">製品希望販売価格</h4>
+      <div class="show-product-info">
+      ￥<%= @product.price %> 円
+      </div>
+    <% end %>
+  </div>
+  <% if current_user.id == @product.user_id %>
+    <%# 製品編集機能と削除機能 %>
+  <% end %>
+  <%# コメント機能 %>
+</div>
+
+<%= render "shared/footer"%>
