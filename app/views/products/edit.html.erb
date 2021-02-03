@@ -7,7 +7,7 @@
       投稿製品画像
     </div>
     <div class="image-set", id="image-list">
-      <%= image_tag "camera_gray.png" %>
+      <%= image_tag @product.image, class:"show-img"%>
     </div>
     <div class="click-upload", id="image-upload">
       <%= f.file_field :image %>
