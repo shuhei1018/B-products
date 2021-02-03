@@ -37,6 +37,15 @@
   background: linear-gradient(transparent 90%, #ffff00 0%);
 }
 
+.product-destroy {
+  background-color: lightgray;
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin: 10px 0px;
+  padding: 2vh 10vw;
+}
+
 @media screen and (max-width: 480px) {
   .show-img {
     height: 220px;
