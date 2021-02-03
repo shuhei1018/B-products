@@ -28,6 +28,7 @@
   </div>
   <% if user_signed_in? %>
     <% if current_user.id == @product.user_id %>
+      <%= link_to '投稿製品の編集', edit_product_path(@product.id), method: :get, class:"product-edit" %>
       <%= link_to '製品投稿の削除', product_path(@product.id), method: :delete, 		data: {confirm: "本当に削除してもよろしいですか？"}, class:"product-destroy" %>
     <% end %>
   <%end%>

@@ -1,0 +1,40 @@
+<%= render "shared/nav"%>
+<h2>製品投稿内容を編集しよう！</h2>
+<%= form_with model:@product, class: "product-post-main", local: true do |f| %>
+  <%= render 'shared/error_messages', model: f.object %>
+  <div class="img-upload">
+    <div class="weight-bold-text">
+      投稿製品画像
+    </div>
+    <div class="image-set", id="image-list">
+      <%= image_tag @product.image, class:"show-img"%>
+    </div>
+    <div class="click-upload", id="image-upload">
+      <%= f.file_field :image %>
+    </div>
+  </div>
+  <div class="weight-bold-text">
+  製品名
+  </div>
+  <%= f.text_area :name, class:"products-text", placeholder:"製品名", maxlength:"20" %>
+  <div class="weight-bold-text">
+  製品状態
+  </div>
+  <%= f.collection_select(:status_id, Status.all, :id, :name, {}, {class:"select-box"}) %>
+  <div class="weight-bold-text">
+    製品説明
+  </div>
+  <%= f.text_area :explanation, class:"products-text", placeholder:"製品の使用用途等記載してください。" ,rows:"5" ,maxlength:"1000" %>
+  <div class="weight-bold-text">
+  希望販売価格
+  </div>
+  <div class="product-cost">
+  <span class="cost-word">¥</span>
+  <%= f.text_field :price, class:"price-input", placeholder:"希望販売価格(任意です)" %>
+  <span class="cost-word">円</span>
+  </div>
+  <div class="post-btn-contents">
+  <%= f.submit "上記内容へ編集する" ,class:"post-btn" %>
+  </div>
+<%end%>
+<%= render "shared/footer"%>

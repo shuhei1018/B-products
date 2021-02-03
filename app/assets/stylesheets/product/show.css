@@ -37,6 +37,14 @@
   background: linear-gradient(transparent 90%, #ffff00 0%);
 }
 
+.product-edit {
+  background-color: rgb(245, 185, 210);
+  text-align: center;
+  font-size: 20px;
+  color: black;
+  margin: 10px 0px;
+  padding: 2vh 10vw;
+}
 .product-destroy {
   background-color: lightgray;
   text-align: center;
