@@ -14,12 +14,14 @@
   <ul class= "product-lists">
     <% @products.each do |product| %>
       <li class="list">
-        <div class="product-img-content">
-          <h3 class="product-name">
-            <%= product.name %>
-          </h3>
-          <%= image_tag product.image , class: "product-img" if product.image.attached? %>
-        </div>
+        <%= link_to product_path(product.id) do %>
+          <div class="product-img-content">
+            <h3 class="product-name">
+              <%= product.name %>
+            </h3>
+            <%= image_tag product.image , class: "product-img" if product.image.attached? %>
+          </div>
+        <%end%>
         <div class="product-info">
           <div class="product-user-info">
             <%= product.user.company_name %>
