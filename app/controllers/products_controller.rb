@@ -20,6 +20,8 @@ class ProductsController < ApplicationController
   end
 
   def show
+    @comment = Comment.new
+    @comments = @product.comments.order(created_at: :desc)
   end
 
   def destroy
