@@ -7,4 +7,8 @@ class Product < ApplicationRecord
   has_one_attached :image
   validates :image, :name, :explanation, presence: true
   validates :status_id, numericality: { other_than: 0 }
+
+  def favorited_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end
