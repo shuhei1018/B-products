@@ -1,0 +1,22 @@
+<% @comments.each do |comment| %>
+  <div class="comment-content">
+    <p class="comment-maincontent">
+      <%= comment.content %>
+    </p>
+    <div class="comment-subcontent">
+      <span class="comment-user">
+        <i class="fas fa-user" style="color: #008b8b"></i>
+        <%= comment.user.nickname %>
+      </span>
+      <span class="comment-date">
+        <i class="fas fa-calendar-alt", style="color: #008b8b"></i>
+        <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+      </span>
+      <% if comment.user == current_user %>
+        <%= link_to product_comment_path(@product, comment),method: :delete, data: {confirm: "本当に削除してもよろしいですか？"}, class:"comment-delete", remote: true do %>
+          <i class="fas fa-trash"></i>削除
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+<% end %>

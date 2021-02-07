@@ -33,6 +33,16 @@
     <% end %>
   <%end%>
   <%# コメント機能 %>
+  <h4 class="comment-title">コメント</h4>
+  <div class="comment_<%= @product.id %>">
+    <%= render "comment", comments: @comments %>
+  </div>
+  <% if user_signed_in? %>
+    <%= form_with(model: [@product, @comment], remote: true ) do |f| %>
+      <%= f.text_area :content, class:"products-text" %>
+      <%= f.submit "コメント発信", class:"comment-btn" %>
+    <% end %>
+  <%end%>
 </div>
 
 <%= render "shared/footer"%>
