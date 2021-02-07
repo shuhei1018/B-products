@@ -1,5 +1,5 @@
 class ProductsController < ApplicationController
-  before_action :ser_production, only: [:show, :destroy, :edit, :update]
+  before_action :set_production, only: [:show, :destroy, :edit, :update]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, only: [:destroy, :edit]
   def index
@@ -49,7 +49,7 @@ class ProductsController < ApplicationController
     params.require(:product).permit(:image, :name, :status_id, :explanation, :price).merge(user_id: current_user.id)
   end
 
-  def ser_production
+  def set_production
     @product = Product.find(params[:id])
   end
 

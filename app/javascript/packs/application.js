@@ -7,7 +7,9 @@ require("@rails/ujs").start()
 // require("turbolinks").start()
 require("@rails/activestorage").start()
 require("channels")
-require('./preimage') 
+require('./preimage')
+
+require('jquery')
 
 //= require jquery3
 //= require popper

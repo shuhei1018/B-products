@@ -1,0 +1,12 @@
+<% @comments.each do |comment| %>
+  <p><%= comment.content %></p>
+  <% if comment.user == current_user %>
+    <%= link_to product_comment_path(@product, comment),method: :delete,
+      data: {confirm: "本当に削除してもよろしいですか？"}, remote: true do %>
+      <i class="fas fa-trash"></i>削除
+    <% end %>
+  <% end %>
+  <span class="comment-date pull-right">
+    <%= comment.created_at.strftime('%Y/%m/%d %H:%M') %>
+  </span>
+<% end %>
