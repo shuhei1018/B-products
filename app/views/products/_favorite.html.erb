@@ -1,0 +1,11 @@
+<% if product.favorited_by?(current_user) %>
+	<%= link_to product_favorites_path(product), method: :delete,remote: true do %>
+		<i class="fas fa-star" style="color: #F98187"></i>
+		<span><%= product.favorites.count %></span>
+	<% end %>
+<% else %>
+	<%= link_to product_favorites_path(product), method: :post,remote: true do %>
+		<i class="far fa-star" style="color: #000000"></i>
+		<span><%= product.favorites.count %></span>
+	<% end %>
+<% end %>

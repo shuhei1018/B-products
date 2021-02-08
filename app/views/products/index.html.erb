@@ -28,6 +28,14 @@
             <br>
             <%= product.user.nickname %>
           </div>
+          <% if user_signed_in? %>
+          <span class="favorite_<%= product.id %>" >
+            <%= render "favorite", product: product %>
+          </span>
+          <% else %>
+            <i class="fas fa-star" style="color:000000">
+            <%= product.favorites.count %></i>
+          <%end%>
           <div class="product-created-at">
             <p>投稿日</p>
             <%= product.created_at.strftime("%m/%d") %>

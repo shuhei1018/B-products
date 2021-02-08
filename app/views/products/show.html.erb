@@ -8,6 +8,14 @@
     <%= @product.user.company_name %><br>
     <%= @product.user.nickname %>
     </div>
+    <% if user_signed_in? %>
+      <span class="favorite_<%= @product.id %>" >
+        <%= render "favorite", product: @product %>
+      </span>
+    <% else %>
+      <i class="fas fa-star" style="color:000000">
+      <%= @product.favorites.count %></i>
+    <%end%>
     <li class="show-product-created-at"><%= @product.created_at.strftime("%Y-%m/%d %H:%M") %></li>
   </ul>
   <div class="show-product-content">
