@@ -3,6 +3,7 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
   root to: "products#index"
+  get 'products/search'
   resources :products do
     resources :comments, only: [:create, :destroy]
     resource :favorites, only: [:create, :destroy]

@@ -1,0 +1,59 @@
+
+<%= render "shared/nav"%>
+<%= render 'shared/flash_messages' %>
+<div class="title-contents">
+  <%= image_tag "factory_pic.png" %>
+  <h1 class="title-name">Welcome to B-products</h1>
+  <h2 class="title-subname">メーカー製品を共有しよう！</h2>
+</div>
+<h4 class="title-explanation">当サイトはメーカー製品(新品)の投稿・閲覧が可能です。
+<br>※中古品ではありません。品位が規格外であったり、少量故に廃棄せざるを得ない製品です。
+<br>※性能が規格外のものはありません。
+</h4>
+<span>
+  <%= search_form_for @p, url: products_search_path do |f| %>
+    <%= f.search_field :name_cont, class:"", placeholder: "キーワード" %>
+    <%= f.submit "検索" %>
+  <% end %>
+</span>
+<div class="product-contents">
+  <ul class= "product-lists">
+    <% if @products.length !=0 %>
+      <% @products.each do |product| %>
+        <li class="list">
+          <%= link_to product_path(product.id) do %>
+            <div class="product-img-content">
+              <h3 class="product-name">
+                <%= product.name %>
+              </h3>
+              <%= image_tag product.image , class: "product-img" if product.image.attached? %>
+            </div>
+          <%end%>
+          <div class="product-info">
+            <div class="product-user-info">
+              <%= product.user.company_name %>
+              <br>
+              <%= product.user.nickname %>
+            </div>
+            <% if user_signed_in? %>
+            <span class="favorite_<%= product.id %>" >
+              <%= render "favorite", product: product %>
+            </span>
+            <% else %>
+              <i class="fas fa-star" style="color:000000">
+              <%= product.favorites.count %></i>
+            <%end%>
+            <div class="product-created-at">
+              <p>投稿日</p>
+              <%= product.created_at.strftime("%m/%d") %>
+            </div>
+          </div>
+        </li>
+      <% end %>
+    <% else %>
+      該当する商品はありません
+    <% end %>
+  </ul>
+</div>
+
+<%= render "shared/footer"%>
