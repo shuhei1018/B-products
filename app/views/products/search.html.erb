@@ -1,6 +1,5 @@
 
 <%= render "shared/nav"%>
-<%= render 'shared/flash_messages' %>
 <div class="title-contents">
   <%= image_tag "factory_pic.png" %>
   <h1 class="title-name">Welcome to B-products</h1>
@@ -10,9 +9,9 @@
 <br>※中古品ではありません。品位が規格外であったり、少量故に廃棄せざるを得ない製品です。
 <br>※性能が規格外のものはありません。
 </h4>
-<span>
+<span class="search-layout">
   <%= search_form_for @p, url: products_search_path do |f| %>
-    <%= f.search_field :name_cont, class:"", placeholder: "キーワード" %>
+    <%= f.search_field :name_or_explanation_cont, class:"search-form", placeholder: "🔎キーワード" %>
     <%= f.submit "検索" %>
   <% end %>
 </span>
@@ -51,7 +50,7 @@
         </li>
       <% end %>
     <% else %>
-      該当する商品はありません
+      該当する製品はありません！
     <% end %>
   </ul>
 </div>
