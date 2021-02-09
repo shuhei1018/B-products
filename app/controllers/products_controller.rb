@@ -2,8 +2,13 @@ class ProductsController < ApplicationController
   before_action :set_production, only: [:show, :destroy, :edit, :update]
   before_action :authenticate_user!, except: [:index, :show]
   before_action :move_to_index, only: [:destroy, :edit]
+  before_action :search_product, only: [:index, :search]
   def index
     @products = Product.includes(:user).order(created_at: :desc)
+  end
+
+  def search
+    @products = @p.result
   end
 
   def new
@@ -56,4 +61,9 @@ class ProductsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless current_user.id == @product.user_id
   end
+
+  def search_product
+    @p = Product.ransack(params[:q])
+  end
+
 end
