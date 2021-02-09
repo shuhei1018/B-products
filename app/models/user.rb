@@ -6,8 +6,8 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable
 
   has_many :products, dependent: :destroy
-  has_many :comments , dependent: :destroy
-  has_many :favorites , dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorites, dependent: :destroy
   def self.guest
     find_or_create_by!(nickname: 'GuestUser', email: 'guest@example.com') do |user|
       user.password = SecureRandom.urlsafe_base64

@@ -65,5 +65,4 @@ class ProductsController < ApplicationController
   def search_product
     @p = Product.ransack(params[:q])
   end
-
 end
