@@ -4,11 +4,11 @@ class ProductsController < ApplicationController
   before_action :move_to_index, only: [:destroy, :edit]
   before_action :search_product, only: [:index, :search]
   def index
-    @products = Product.includes(:user).order(created_at: :desc)
+    @products = Product.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def search
-    @products = @p.result
+    @products = @p.result.page(params[:page]).per(6)
   end
 
   def new
