@@ -1,0 +1,34 @@
+<ul class= "product-lists">
+    <% @products.each do |product| %>
+      <li class="list">
+        <%= link_to product_path(product.id) do %>
+          <div class="product-img-content">
+            <h3 class="product-name">
+              <%= product.name %>
+            </h3>
+            <%= image_tag product.image , class: "product-img" if product.image.attached? %>
+          </div>
+        <%end%>
+        <div class="product-info">
+          <div class="product-user-info">
+            <%= product.user.company_name %>
+            <br>
+            <%= product.user.nickname %>
+          </div>
+          <% if user_signed_in? %>
+          <span class="favorite_<%= product.id %>" >
+            <%= render "favorite", product: product %>
+          </span>
+          <% else %>
+            <i class="fas fa-star" style="color:000000">
+            <%= product.favorites.count %></i>
+          <%end%>
+          <div class="product-created-at">
+            <p>投稿日</p>
+            <%= product.created_at.strftime("%m/%d") %>
+          </div>
+        </div>
+      </li>
+    <% end %>
+    <%= link_to_next_page @products, 'つづきを見る', remote: true, class: "scroll-btn", id: 'more_link' %>
+  </ul>
