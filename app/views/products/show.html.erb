@@ -4,19 +4,28 @@
   <h1><%= @product.name %></h1>
   <%= image_tag @product.image, class:"show-img"%>
   <ul class="show-info">
-    <div class="show-product-user-info">
-    <%= @product.user.company_name %><br>
-    <%= @product.user.nickname %>
+    <div class="product-user-info">
+      <%= @product.user.company_name %>
+      <br>
+      <i class="fas fa-user" style="color: #008b8b"></i>
+      <%= @product.user.nickname %>
     </div>
-    <% if user_signed_in? %>
-      <span class="favorite_<%= @product.id %>" >
-        <%= render "favorite", product: @product %>
-      </span>
-    <% else %>
-      <i class="fas fa-star" style="color:000000">
-      <%= @product.favorites.count %></i>
-    <%end%>
-    <li class="show-product-created-at"><%= @product.created_at.strftime("%Y-%m/%d %H:%M") %></li>
+    <li class="product-created-at">
+      <p>投稿日</p>
+      <i class="fas fa-calendar-alt", style="color: #008b8b"></i>
+      <%= @product.created_at.strftime("%Y-%m/%d %H:%M") %>
+    </li>
+    <div class="star">
+      <p class="hosii">ﾎｼｲ!</p>
+      <% if user_signed_in? %>
+        <span class="favorite_<%= @product.id %>" >
+          <%= render "favorite", product: @product %>
+        </span>
+      <% else %>
+        <i class="fas fa-star" style="color:000000">
+        <%= @product.favorites.count %></i>
+      <%end%>
+    </div>
   </ul>
   <div class="show-product-content">
     <div class="show-product-item">製品状態</div>
