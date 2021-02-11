@@ -45,6 +45,8 @@
   padding: 0.5vw;
   margin: 10px 33px;
   background-color: aliceblue;
+  box-shadow: 0 0 10px rgba(19, 19, 16, 0.9);
+  border-radius: 3%;
 }
 
 .product-img-content {
@@ -101,6 +103,7 @@
   font-size: 16px;
   margin: 3vh.0;
   border-radius: 5%;
+  box-shadow: 0 0 10px rgba(19, 19, 16, 0.9);
 }
 
 @media screen and (max-width: 620px) {
