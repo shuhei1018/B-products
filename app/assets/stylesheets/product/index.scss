@@ -100,11 +100,11 @@
   background: #232322;
   border: 1px solid #232322;
   color: #fff;
-  width: 30%;
+  width: 50%;
   padding: 10px;
   text-align: center;
   font-size: 16px;
-  margin: 3vh.0;
+  margin: 3vh 0;
   border-radius: 5%;
   box-shadow: 0 0 10px rgba(19, 19, 16, 0.9);
 }
@@ -141,5 +141,11 @@
   }
   .star {
     font-size: 16px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .scroll-btn {
+    width: 40%;
   }
 }

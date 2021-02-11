@@ -73,8 +73,9 @@ li {
     height: 80px;
   }
   .item {
-    font-size: 80%;
+    font-size: 70%;
     width: auto;
+    margin-right: 5px;
   }
 
   .nav-header {
@@ -83,7 +84,7 @@ li {
 
   .root {
     margin-top: 10px;
-    font-size: 25px;
+    font-size: 23px;
   }
 
   .nav-word {
@@ -93,5 +94,12 @@ li {
 
   .item {
     margin-top: 10px;
+  }
+}
+
+@media screen and (max-width: 770px) {
+  .item {
+    width: auto;
+    margin-right: 10px;
   }
 }
