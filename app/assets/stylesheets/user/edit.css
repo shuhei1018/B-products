@@ -6,13 +6,22 @@
 .delete-red-btn {
   width: 100%;
   background: red;
-  border: 1px solid red;
+  border: 1px solid #131112;
   color: #fff;
   line-height: 48px;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 2%;
+  box-shadow: 0 0 3px rgba(19, 19, 16, 0.9);
 }
 
 .user-delete {
   border-bottom: solid 2px black;
+}
+
+@media screen and (max-width: 480px) {
+  .delete-red-btn {
+    line-height: 34px;
+    font-size: 16px;
+  }
 }

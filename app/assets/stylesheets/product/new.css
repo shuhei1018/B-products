@@ -52,6 +52,14 @@
   font-size: 16px;
   resize: none;
 }
+.products-explanation {
+  width: 100%;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+  font-size: 16px;
+  resize: none;
+  margin-bottom: 10px;
+}
 .cost-word {
   font-size: 16px;
 }
@@ -79,10 +87,29 @@
   height: 50px;
   font-size: 16px;
   margin: 3vh.0;
+  box-shadow: 0 0 10px rgba(19, 19, 16, 0.9);
+  border-radius: 3%;
 }
 
 @media screen and (max-width: 620px) {
   .click-upload {
     font-size: 70%;
+  }
+  .weight-bold-text {
+    font-size: 16px;
+  }
+  .products-text {
+    height: 30px;
+    font-size: 14px;
+  }
+  .select-box {
+    font-size: 11px;
+  }
+  .price-input {
+    font-size: 14px;
+  }
+  .post-btn {
+    height: 36px;
+    margin: 2vh.0;
   }
 }

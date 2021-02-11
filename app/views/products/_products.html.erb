@@ -13,19 +13,24 @@
           <div class="product-user-info">
             <%= product.user.company_name %>
             <br>
+            <i class="fas fa-user" style="color: #008b8b"></i>
             <%= product.user.nickname %>
           </div>
-          <% if user_signed_in? %>
-          <span class="favorite_<%= product.id %>" >
-            <%= render "favorite", product: product %>
-          </span>
-          <% else %>
-            <i class="fas fa-star" style="color:000000">
-            <%= product.favorites.count %></i>
-          <%end%>
           <div class="product-created-at">
             <p>投稿日</p>
+            <i class="fas fa-calendar-alt", style="color: #008b8b"></i>
             <%= product.created_at.strftime("%m/%d") %>
+          </div>
+          <div class="star">
+          <p class="hosii">ﾎｼｲ!</p>
+            <% if user_signed_in? %>
+              <span class="favorite_<%= product.id %>" >
+                <%= render "favorite", product: product %>
+              </span>
+            <% else %>
+              <i class="fas fa-star" style="color:000000">
+              <%= product.favorites.count %></i>
+            <%end%>
           </div>
         </div>
       </li>

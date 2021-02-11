@@ -4,19 +4,28 @@
   <h1><%= @product.name %></h1>
   <%= image_tag @product.image, class:"show-img"%>
   <ul class="show-info">
-    <div class="show-product-user-info">
-    <%= @product.user.company_name %><br>
-    <%= @product.user.nickname %>
+    <div class="product-user-info">
+      <%= @product.user.company_name %>
+      <br>
+      <i class="fas fa-user" style="color: #008b8b"></i>
+      <%= @product.user.nickname %>
     </div>
-    <% if user_signed_in? %>
-      <span class="favorite_<%= @product.id %>" >
-        <%= render "favorite", product: @product %>
-      </span>
-    <% else %>
-      <i class="fas fa-star" style="color:000000">
-      <%= @product.favorites.count %></i>
-    <%end%>
-    <li class="show-product-created-at"><%= @product.created_at.strftime("%Y-%m/%d %H:%M") %></li>
+    <li class="product-created-at">
+      <p>投稿日</p>
+      <i class="fas fa-calendar-alt", style="color: #008b8b"></i>
+      <%= @product.created_at.strftime("%Y-%m/%d %H:%M") %>
+    </li>
+    <div class="star">
+      <p class="hosii">ﾎｼｲ!</p>
+      <% if user_signed_in? %>
+        <span class="favorite_<%= @product.id %>" >
+          <%= render "favorite", product: @product %>
+        </span>
+      <% else %>
+        <i class="fas fa-star" style="color:000000">
+        <%= @product.favorites.count %></i>
+      <%end%>
+    </div>
   </ul>
   <div class="show-product-content">
     <div class="show-product-item">製品状態</div>
@@ -34,12 +43,7 @@
       </div>
     <% end %>
   </div>
-  <% if user_signed_in? %>
-    <% if current_user.id == @product.user_id %>
-      <%= link_to '投稿製品の編集', edit_product_path(@product.id), method: :get, class:"product-edit" %>
-      <%= link_to '製品投稿の削除', product_path(@product.id), method: :delete, 		data: {confirm: "本当に削除してもよろしいですか？"}, class:"product-destroy" %>
-    <% end %>
-  <%end%>
+
   <%# コメント機能 %>
   <h4 class="comment-title">コメント</h4>
   <div class="comment_<%= @product.id %>">
@@ -49,6 +53,15 @@
     <%= form_with(model: [@product, @comment], remote: true ) do |f| %>
       <%= f.text_area :content, class:"products-text" %>
       <%= f.submit "コメント発信", class:"comment-btn" %>
+    <% end %>
+  <%end%>
+
+  <%# 製品編集と削除 %>
+  <% if user_signed_in? %>
+    <% if current_user.id == @product.user_id %>
+      <h4 class="edit-destroy-title">投稿製品の編集・削除</h4>
+      <%= link_to '投稿製品の編集', edit_product_path(@product.id), method: :get, class:"product-edit" %>
+      <%= link_to '製品投稿の削除', product_path(@product.id), method: :delete, 		data: {confirm: "本当に削除してもよろしいですか？"}, class:"product-destroy" %>
     <% end %>
   <%end%>
 </div>

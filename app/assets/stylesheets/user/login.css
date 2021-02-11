@@ -1,21 +1,30 @@
 .login-btn {
   width: 50%;
   margin: 0 auto;
-  margin-top: 50px;
+  margin-top: 40px;
 }
 
 .login-red-btn {
   width: 100%;
   background: #ea2dcb;
-  border: 1px solid #ea2dcb;
+  border: 1px solid #131112;
   color: #fff;
   line-height: 48px;
   font-size: 20px;
   cursor: pointer;
+  border-radius: 2%;
+  box-shadow: 0 0 3px rgba(19, 19, 16, 0.9);
 }
 
 .login-flash-message {
   font-size: 1.3vw;
   text-align: center;
   color: red;
+}
+
+@media screen and (max-width: 480px) {
+  .login-red-btn {
+    line-height: 34px;
+    font-size: 16px;
+  }
 }
