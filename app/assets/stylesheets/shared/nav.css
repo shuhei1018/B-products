@@ -1,12 +1,13 @@
 .container {
   z-index: 9999;
-  height: 100px;
+  height: 90px;
   position: fixed;
   top: 0;
   width: 100%;
   display: flex;
   justify-content: flex-end;
   background-color: #f0f0aa;
+  box-shadow: 0 0 3px rgba(22, 22, 21, 0.9);
   padding: 5px;
 }
 
@@ -14,12 +15,19 @@
   margin: 5px auto 5px 20px;
 }
 
-.title {
-  line-height: 30px;
+.root {
   text-align: center;
   font-weight: bold;
   color: black;
   text-decoration: none;
+  display: flex;
+  align-items: center;
+  font-size: 40px;
+  font-family: "ＭＳ 明朝", cursive;
+}
+
+.title-word {
+  margin-left: 10px;
 }
 
 .item {
@@ -27,9 +35,16 @@
   height: 70px;
   margin: 3px;
   margin-right: 10px;
-  line-height: 40px;
   text-align: center;
   font-weight: bold;
+}
+
+.item-color {
+  color: black;
+}
+
+.nav-word {
+  margin-top: 8px;
 }
 
 li {
@@ -37,28 +52,46 @@ li {
   float: left;
 }
 
-.product {
+.product-color {
   background-color: rgb(210, 150, 30);
   border-radius: 25%;
-  margin-right: 10px;
+  margin-right: 20px;
   padding-left: 5px;
+  box-shadow: 0 0 3px rgba(22, 22, 21, 0.9);
 }
 
 .fa-industry {
   color: pink;
 }
 
-@media screen and (max-width: 620px) {
+.nav-guestlogin {
+  margin-right: 10px;
+}
+
+@media screen and (max-width: 650px) {
+  .container {
+    height: 80px;
+  }
   .item {
     font-size: 80%;
     width: auto;
   }
-  .title-word {
-    font-size: 80%;
+
+  .nav-header {
+    margin: 5px auto 5px 5px;
+  }
+
+  .root {
+    margin-top: 10px;
+    font-size: 25px;
+  }
+
+  .nav-word {
+    font-size: 75%;
     width: auto;
   }
-  .nav-word {
-    font-size: 80%;
-    width: auto;
+
+  .item {
+    margin-top: 10px;
   }
 }

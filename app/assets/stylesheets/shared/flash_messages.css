@@ -1,17 +1,16 @@
 .alert {
-  font-size: 16px;
-  height: 20px;
+  font-size: 14px;
+  height: 16px;
   width: 100%;
   text-align: center;
   background-color: dodgerblue;
   color: aliceblue;
   padding: 5px;
-  margin-bottom: 10px;
 }
 
 @media screen and (max-width: 480px) {
   .alert {
     font-size: 12px;
-    height: 16px;
+    height: 14px;
   }
 }

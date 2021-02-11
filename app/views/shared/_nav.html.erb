@@ -3,28 +3,33 @@
   <div class="container">
 
     <div class="nav-header">
-      <div class="title">
         <%= link_to root_path, class: "root", method: :get do %>
-        <p class="title-word">B-products</p><i class="fas fa-industry fa-4x"></i><%end%>
-      </div>
+          <i class="fas fa-industry fa-2x"></i>
+          <p class="title-word">B-products</p>
+        <%end%>
     </div>
 
     <% if user_signed_in? %>
-      <li class="item"><%= link_to destroy_user_session_path, class: "logout", method: :delete do %><i class="fas fa-sign-out-alt fa-4x"></i><p class="nav-word">ログアウト</p><%end%>
+      <li class="item">
+        <%= link_to destroy_user_session_path, class: "item-color", method: :delete do %><i class="fas fa-sign-out-alt fa-3x"></i><p class="nav-word">ログアウト</p><%end%>
       </li>
-      <li class="item"><%= link_to edit_user_registration_path, class: "profile-edit", method: :get do %><i class="far fa-id-badge fa-4x"></i><p class="nav-word">ユーザー編集</p><%end%>
+      <li class="item">
+        <%= link_to edit_user_registration_path, class: "item-color", method: :get do %><i class="far fa-id-badge fa-3x"></i><p class="nav-word">ユーザー編集</p><%end%>
       </li>
-      <div class="product">
-        <li class="item"><%= link_to new_product_path, class: "product-post", method: :get do %><i class="far fa-plus-square fa-4x"></i><p class="nav-word">製品投稿</p><%end%>
+      <div class="product-color">
+        <li class="item">
+          <%= link_to new_product_path, class: "item-color", method: :get do %><i class="far fa-plus-square fa-3x"></i><p class="nav-word">製品投稿</p><%end%>
         </li>
       </div>
     <% else %>
-      <li class="item"><%= link_to new_user_registration_path, class: "sign-up", method: :get do %><i class="fas fa-user-plus fa-4x"></i><p class="nav-word">ユーザー登録</p><%end%>
+      <li class="item"><%= link_to new_user_registration_path, class: "item-color", method: :get do %><i class="fas fa-user-plus fa-3x"></i><p class="nav-word">ユーザー登録</p><%end%>
       </li>
-      <li class="item"><%= link_to new_user_session_path, class: "login", method: :get do %><i class="fas fa-sign-in-alt fa-4x"></i><p class="nav-word">ログイン</p><%end%>
+      <li class="item"><%= link_to new_user_session_path, class: "item-color", method: :get do %><i class="fas fa-sign-in-alt fa-3x"></i><p class="nav-word">ログイン</p><%end%>
       </li>
-      <li class="item"><%= link_to users_guest_sign_in_path, class: "login", method: :post do %><i class="fas fa-sign-in-alt fa-4x"></i><p class="nav-word">ゲストログイン</p><%end%>
-      </li>
+      <div class="nav-guestlogin">
+        <li class="item"><%= link_to users_guest_sign_in_path, class: "item-color", method: :post do %><i class="fas fa-sign-in-alt fa-3x"></i><p class="nav-word">ゲストログイン</p><%end%>
+        </li>
+      </div>
     <% end %>
 
   </div>
