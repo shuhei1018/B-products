@@ -4,7 +4,7 @@ class ProductsController < ApplicationController
   before_action :move_to_index, only: [:destroy, :edit]
   before_action :search_product, only: [:index, :search]
   def index
-    @products = Product.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
+    @products = Product.with_attached_image.includes(:user).order(created_at: :desc).page(params[:page]).per(6)
   end
 
   def search
