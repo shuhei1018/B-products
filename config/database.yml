@@ -30,7 +30,7 @@ test:
   database: B_products_test
   username: root
   password: password
-  host: db-test
+  host: <%= ENV.fetch("DB_HOST") { 'db' } %>
   socket: /tmp/mysql.sock
 
 # As with config/credentials.yml, you never want to store sensitive information,
