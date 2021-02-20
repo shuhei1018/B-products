@@ -37,7 +37,10 @@ jobs:
       - run: bundle exec rake db:schema:load
       # Run rspec in parallel
       # - ruby/rspec-test
-      - ruby/rubocop-check
+      # - ruby/rubocop-check
+      - run:
+          name: Rubocop
+          command: bundle exec rubocop
 
 workflows:
   version: 2
