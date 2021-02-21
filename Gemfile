@@ -82,4 +82,4 @@ gem 'ransack'
 gem 'kaminari'
 gem "bullet"
 gem 'dotenv-rails'
-gem 'mini_racer'
+# gem 'mini_racer'
