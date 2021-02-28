@@ -29,18 +29,18 @@ http://b-products.work/
 
 ## 機能・技術
 
-【例】トップページ(無限スクロール)
+【例】トップページ(無限スクロール機能)
 
 ![B-product_scroll](https://user-images.githubusercontent.com/74055138/108619758-4224de80-746a-11eb-8339-88d0047c12c5.gif)
 
-【例】詳細表示ページ(コメント、いいね)
+【例】詳細表示ページ(コメント機能、いいね機能)
 
 ![B-products_comment_like](https://user-images.githubusercontent.com/74055138/108619938-ae541200-746b-11eb-9c56-8e83a99bed59.gif)
 
 - 新規投稿機能
 - 一覧表示機能、詳細表示機能
 - 編集機能 、削除機能
-- 無限スクロール(kaminari, ajax)
+- 無限スクロール機能(kaminari, ajax)
 - ユーザー管理機能(devise)
 - 検索機能(ransack)
 - コメント機能(ajax)
